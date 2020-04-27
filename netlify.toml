@@ -1,5 +1,5 @@
 [build]
   publish = "build/"
-  command = "cd backend/ && npm test && npm run build"
+  command = "cd backend/ && npm install && npm test && npm run build"
   environment = { CI = "true" }
   
