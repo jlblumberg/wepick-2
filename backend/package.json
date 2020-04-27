@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "mocha -r esm ../backend/app.test.js",
-    "start": "node -r esm ../backend/app.js"
+    "test": "mocha -r esm app.test.js",
+    "start": "node -r esm app.js"
   },
   "keywords": [],
   "author": "",
