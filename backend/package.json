@@ -2,19 +2,31 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "test": "mocha -r esm app.test.js",
-    "start": "node -r esm app.js"
+    "test": "mocha -r esm server.test.js",
+    "server": "nodemon -r esm server.js",
+    "start": "node -r esm server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "esm": "^3.2.25"
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.2.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "is-empty": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.10",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "validator": "^13.0.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^7.1.2"
+    "mocha": "^7.1.2",
+    "nodemon": "^2.0.3"
   }
 }
