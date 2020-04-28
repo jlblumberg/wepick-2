@@ -1,18 +1,18 @@
 import { expect } from "chai";
-import WePick from "./server.js";
+import app from "./server.js";
 import request from "supertest";
 
   describe("Server", function() {
-    let testServer = new WePick
+    //let testServer = new app
     it("renders correctly", function(){
-      expect(testServer).to.be.an('object');
+      expect(app).to.be.an('object');
     });
   });
 
   describe("Server running test", function() {
-    let wePick = new WePick
+    //let testServer = new app
     it("runs the server", function(done) {
-      const res = request(wePick).get("/")
+      const res = request(app).get("/")
 
       res.expect({val: "Server running"})
       res.expect(200, done)
