@@ -10,8 +10,9 @@ import request from "supertest";
   });
 
   describe("Server running test", function() {
+    let wePick = new WePick
     it("runs the server", function(done) {
-      const res = request(WePick).get("/")
+      const res = request(wePick).get("/")
 
       res.expect({val: "Server running"})
       res.expect(200, done)
