@@ -1,21 +1,16 @@
 import { expect } from "chai";
 import app from "./server.js";
-import request from "supertest";
+// import request from "supertest";
 
-  describe("Server", function() {
-    //let testServer = new app
-    it("renders correctly", function(){
-      expect(app).to.be.an('object');
-    });
+describe("Server", function() {
+  it("renders correctly", function(){
+    expect(app).to.be.a('function');
   });
+});
 
-  describe("Server running test", function() {
-    //let testServer = new app
-    it("runs the server", function(done) {
-      const res = request(app).get("/")
-
-      res.expect(200, done)
-      res.expect({val: "Server running"})
-    })
+describe("Server running test", function() {
+  it("runs the server", async() => {
+    expect(app.port).to.equal(3000);
   })
+})
   
