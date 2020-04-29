@@ -14,8 +14,8 @@ import request from "supertest";
     it("runs the server", function(done) {
       const res = request(app).get("/")
 
-      res.expect({val: "Server running"})
       res.expect(200, done)
+      res.expect({val: "Server running"})
     })
   })
   
