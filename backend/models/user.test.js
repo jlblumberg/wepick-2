@@ -16,7 +16,7 @@ describe('Database tests', function () {
   // Once a connection is established invoke done()
 
   before(function (done) {
-    mongoose.connect('mongodb://localhost/testDatabase');
+    mongoose.connect('mongoURI: "mongodb+srv://new-user_1:new-user_1@wepick-2-g6h3l.mongodb.net/test?retryWrites=true&w=majority');
     const db = mongoose.connection;
     db.on('error', console.error.bind(console, 'connection error'));
     db.once('open', function () {
