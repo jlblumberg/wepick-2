@@ -16,9 +16,9 @@ describe('Database tests', function () {
   // Once a connection is established invoke done()
 
   before(function (done) {
-    mongoose.connect('mongodb://localhost/testDatabase', { useNewUrlParser: true, useUnifiedTopology: true } );
+    const uri = require("../config/keys").mongoURI;
+    mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true } );
     const db = mongoose.connection
-    console.log(db)
     db.on('error', console.error.bind(console, 'connection error'));
     db.once('open', function () {
       console.log('We are connected to test database!');

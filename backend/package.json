@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "mocha -r esm \"./{,!(node_modules)/**/}*.test.js\"",
+    "test": "NODE_ENV=test mocha -r esm \"./{,!(node_modules)/**/}*.test.js\"",
     "server": "nodemon -r esm server.js",
     "start": "node -r esm server.js"
   },
