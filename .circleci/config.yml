@@ -2,9 +2,9 @@ version: 2.1
 orbs:
   node: circleci/node@1.1.6
 jobs:
-  build:
-    docker:
-      - image: circleci/mongo:3.4.4
+  # build:
+  #   docker:
+  #     - image: circleci/mongo:3.4.4
   build-and-test:
     executor:
       name: node/default
