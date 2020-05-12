@@ -18,7 +18,6 @@ describe('Database tests', function () {
 
   before(function (done) {
     const uri = require("../config/keys").mongoURI;
-    console.log(uri);
     
     mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true } );
     const db = mongoose.connection
