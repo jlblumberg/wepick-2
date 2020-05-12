@@ -10,7 +10,7 @@ const mongoURI = () => {
 
 const port = () => {
   if (process.env.NODE_ENV === 'test') {
-    return 27017;
+    return 5000;
   } else if (process.env.NODE_ENV === 'development') {
     return 3000;
   } else {
