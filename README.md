@@ -68,3 +68,13 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+
+### Useful commands
+
+```
+alias mdb="brew services run mongodb-community"
+alias mdb-status="brew services list"
+alias mdb-stop="brew services stop mongodb-community"
+```
