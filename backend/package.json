@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "NODE_ENV=test mocha -r esm \"./{,!(node_modules)/**/}*.test.js\" --exit",
-    "server": "nodemon -r esm server.js",
+    "server": "NODE_ENV=development nodemon -r esm server.js",
     "start": "node -r esm server.js",
     "mdb-community": "brew services run mongodb-community"
   },
