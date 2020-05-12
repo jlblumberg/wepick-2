@@ -6,8 +6,7 @@ const expect = chai.expect;
 // Create a new schema that accepts a 'user' object.
 // 'username' is a required field
 const testSchema = new Schema({
-  username: { type: String, required: true },
-  time: Date
+  username: { type: String, required: true }
 });
 
 // Create a new collection called 'User'
@@ -33,8 +32,7 @@ describe('Database tests', function () {
 
     it('New user saved to test database', function (done) {
       var testUser = User({
-        username: 'Mike',
-        date: Date.now()
+        username: 'Mike'
       });
       testUser.save(done);
     });
