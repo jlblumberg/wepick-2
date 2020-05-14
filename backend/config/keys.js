@@ -20,5 +20,6 @@ const port = () => {
 
 module.exports = {
   mongoURI: mongoURI(),
-  port: port()
+  port: port(),
+  secretOrKey: "secret"
 }
