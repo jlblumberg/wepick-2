@@ -27,7 +27,7 @@ describe('Database tests', function () {
     });
   });
 
-  describe('Test Database', function () {
+  describe('Test Usernames', function () {
     // Save object with 'username' value of 'Mike"
 
     it('New user saved to test database', function (done) {
