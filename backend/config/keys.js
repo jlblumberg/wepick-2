@@ -1,5 +1,6 @@
 const mongoURI = () => { 
   if ( process.env.NODE_ENV === 'development' ) { 
+    console.log(`mongodb+srv://${process.env.MONGO_DB_CREDS}:${process.env.MONGO_DB_CREDS}@wepick-2-g6h3l.mongodb.net/test?retryWrites=true&w=majority`)
     return `mongodb+srv://${process.env.MONGO_DB_CREDS}:${process.env.MONGO_DB_CREDS}@wepick-2-g6h3l.mongodb.net/test?retryWrites=true&w=majority`  
   } else if ( process.env.NODE_ENV === 'test') {
     return 'mongodb://localhost/testDatabase'
