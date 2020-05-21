@@ -4,7 +4,11 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -r esm \"./{,!(node_modules)/**/}*.test.js\""
+    "client-install": "npm install --prefix client",
+    "start": "cd backend && NODE_ENV=development node -r esm server.js",
+    "server": "cd backend && NODE_ENV=development nodemon -r esm server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -16,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/jlblumberg/wepick-2/issues"
   },
-  "homepage": "https://github.com/jlblumberg/wepick-2#readme"
+  "homepage": "https://github.com/jlblumberg/wepick-2#readme",
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.4"
+  }
 }
