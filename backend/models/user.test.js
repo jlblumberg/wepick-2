@@ -3,10 +3,16 @@ const Schema = mongoose.Schema;
 const chai = require('chai');
 const expect = chai.expect;
 
+const validateRegisterInput = require("../validation/register");
+const validateLoginInput = require("../validation/login");
+
 // Create a new schema that accepts a 'user' object.
 // 'username' is a required field
 const testSchema = new Schema({
-  username: { type: String, required: true }
+  email: { type: String, required: true },
+  username: { type: String, required: true },
+  password: { type: String, required: true },
+  password2: { type: String, required: true }
 });
 
 // Create a new collection called 'User'
@@ -32,20 +38,33 @@ describe('Database tests', function () {
 
     it('New user saved to test database', function (done) {
       var testUser = User({
-        username: 'Mike'
+        email: 'mike@example.com', 
+        username: 'Mike',
+        password: 'Mike123',
+        password2: 'Mike123'
       });
       testUser.save(done);
     });
 
-    it('Doesn\'t save incorrect format to database', function (done) {
-      // Attempt to save with wrong info. An error should trigger.
+    it('Doesn\'t save user to database when all fields are not completed', function (done) {
       var wrongSave = User({
-        notUsername: 'Not Mike'
+        username: 'Mike'
       });
       wrongSave.save(err => {
         if (err) { return done(); }
         throw new Error('Should generate error!');
       });
+    });
+
+    it('Doesn\'t save user with invalid email', function (){
+      var wrongSave = User({
+        username: 'Mike',
+        email: 'mike.com',
+        password: 'Mike123',
+        password2: 'Mike123'
+      });
+      const { errors } = validateRegisterInput(wrongSave);
+      expect(errors.email).to.equal('Email is invalid')
     });
 
     it('Should retrieve data from test database', function (done) {
@@ -56,7 +75,6 @@ describe('Database tests', function () {
         done();
       });
     });
-
   });
 
   // After all tests are finished drop database and close connection
