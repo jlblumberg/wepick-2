@@ -89,6 +89,17 @@ describe('Database tests', function () {
       expect(errors.password).to.equal('Password must be at least 6 characters')
     });
 
+    it('Doesn\'t save user if password is too long', function () {
+      var wrongSave = User({
+        username: 'Mike',
+        email: 'mike@example.com',
+        password: 'M1235M1235M1235M1235M1235M12351',
+        password2: 'M1235M1235M1235M1235M1235M12351'
+      });
+      const { errors } = validateRegisterInput(wrongSave);
+      expect(errors.password).to.equal('Password must be less than 31 characters long')
+    });
+
     it('Should retrieve data from test database', function (done) {
       // Look up the 'Mike' user previously saved.
       User.find({ username: 'Mike' }, (err, username) => {
