@@ -67,6 +67,17 @@ describe('Database tests', function () {
       expect(errors.email).to.equal('Email is invalid')
     });
 
+    it('Doesn\'t save user if passwords don\'t match', function (){
+      var wrongSave = User({
+        username: 'Mike',
+        email: 'mike@example.com',
+        password: 'Mike123',
+        password2: 'Mike1234'
+      });
+      const { errors } = validateRegisterInput(wrongSave);
+      expect(errors.password2).to.equal('Passwords must match')
+    });
+
     it('Should retrieve data from test database', function (done) {
       // Look up the 'Mike' user previously saved.
       User.find({ username: 'Mike' }, (err, username) => {
