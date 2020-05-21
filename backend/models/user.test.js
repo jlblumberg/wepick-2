@@ -7,7 +7,6 @@ const validateRegisterInput = require("../validation/register");
 const validateLoginInput = require("../validation/login");
 
 // Create a new schema that accepts a 'user' object.
-// 'username' is a required field
 const testSchema = new Schema({
   email: { type: String, required: true },
   username: { type: String, required: true },
@@ -33,7 +32,7 @@ describe('Database tests', function () {
     });
   });
 
-  describe('Test Usernames', function () {
+  describe('User Registry', function () {
     // Save object with 'username' value of 'Mike"
 
     it('New user saved to test database', function (done) {
