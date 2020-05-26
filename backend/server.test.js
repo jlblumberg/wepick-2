@@ -10,7 +10,7 @@ describe("Server", function() {
 
 describe("Server running test", function() {
   it("runs the server", async() => {
-    expect(app.port === 3000 || app.port === process.env.PORT || app.port === 5000).to.equal(true)
+    expect(app.port === 5000 || app.port === process.env.PORT || app.port === 5001).to.equal(true)
   })
 })
   
