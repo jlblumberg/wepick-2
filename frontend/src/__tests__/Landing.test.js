@@ -13,10 +13,8 @@ describe('Landing', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  
-
-  // it('renders a home link', () => { 
-  //   const wrapper = shallow(<Navbar />);
-  //   expect(wrapper.find('#home-link').text()).toEqual('WePick2')
-  // }); 
+  it('renders a signup button', () => { 
+    const wrapper = shallow(<Landing />);
+    expect(wrapper.find('#signup-button').type()).toEqual('button')
+  }); 
 });
