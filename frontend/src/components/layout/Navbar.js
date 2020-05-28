@@ -14,8 +14,8 @@ class Navbar extends Component {
                 fontFamily: "monospace"
               }}
               className="col s5 brand-logo center black-text"
+              id="home-link"
             >
-              <i className="material-icons">code</i>
               WePick2
             </Link>
            </BrowserRouter>
