@@ -7,15 +7,19 @@ import Landing from '../components/layout/Landing';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('Landing', () => {
+  const wrapper = shallow(<Landing/>);
 
   it('renders correctly', () => {
-    const wrapper = shallow(<Landing/>);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('renders a signup button', () => { 
-    const wrapper = shallow(<Landing />);
-    expect(wrapper.find('#signup-button').type()).toEqual('button')
-    expect(wrapper.find('#signup-button').text()).toEqual('Sign Up')
+    expect(wrapper.find('button#signup').type()).toEqual('button')
+    expect(wrapper.find('button#signup').text()).toEqual('Sign Up')
   }); 
+
+  it('renders a login button', () => {
+    expect(wrapper.find('button#login').type()).toEqual('button')
+    expect(wrapper.find('button#login').text()).toEqual('Log In')
+  })
 });
