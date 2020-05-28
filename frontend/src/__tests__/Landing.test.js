@@ -13,13 +13,11 @@ describe('Landing', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('renders a signup button', () => { 
-    expect(wrapper.find('button#signup').type()).toEqual('button')
-    expect(wrapper.find('button#signup').text()).toEqual('Sign Up')
+  it('renders a signup link', () => { 
+    expect(wrapper.find('#signup').text()).toEqual('Sign Up')
   }); 
 
-  it('renders a login button', () => {
-    expect(wrapper.find('button#login').type()).toEqual('button')
-    expect(wrapper.find('button#login').text()).toEqual('Log In')
+  it('renders a login link', () => {
+    expect(wrapper.find('#login').text()).toEqual('Log In')
   })
 });
