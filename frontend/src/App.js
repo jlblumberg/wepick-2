@@ -8,7 +8,6 @@ function App() {
     <div>
       <Navbar />
       <Landing />
-      <h1>wepick2</h1>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import { BrowserRouter, Link } from 'react-router-dom';
 
 function Landing() {
   return(
-    <div>
+    <div style={{ height: "75vh" }} className="container mt-10 center-align">
       <BrowserRouter>
         <Link 
           id='signup'
