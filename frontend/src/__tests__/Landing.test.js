@@ -19,5 +19,6 @@ describe('Landing', () => {
 
   it('renders a login link', () => {
     expect(wrapper.find('#login').text()).toEqual('Log In')
-  })
+  });
+  
 });
