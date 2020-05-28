@@ -16,5 +16,6 @@ describe('Landing', () => {
   it('renders a signup button', () => { 
     const wrapper = shallow(<Landing />);
     expect(wrapper.find('#signup-button').type()).toEqual('button')
+    expect(wrapper.find('#signup-button').text()).toEqual('Sign Up')
   }); 
 });
