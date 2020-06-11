@@ -4,7 +4,9 @@ import { BrowserRouter, Link } from 'react-router-dom';
 function Register() {
   return(
     <div>
-      <p id="alreadyregistered">Already have an account?</p>
+      <BrowserRouter>
+        <p id="alreadyregistered">Already have an account? <Link id="login" to="/login">Log In</Link></p>
+      </BrowserRouter>
     </div>
   )
 }

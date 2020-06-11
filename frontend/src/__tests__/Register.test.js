@@ -14,7 +14,7 @@ describe('Register', () => {
   });
 
   it('renders an already have account log in link', () => {
-    expect(wrapper.find('#alreadyregistered').text()).toEqual('Already have an account?')
+    expect(wrapper.find('#alreadyregistered').text()).toContain('Already have an account?')
     expect(wrapper.find('#login').text()).toEqual('Log In')
   })
 });
