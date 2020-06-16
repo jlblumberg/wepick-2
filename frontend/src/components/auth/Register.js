@@ -7,6 +7,13 @@ function Register() {
       <BrowserRouter>
         <p id="alreadyregistered">Already have an account? <Link id="login" to="/login">Log In</Link></p>
       </BrowserRouter>
+      <form>
+        <div>
+          <input id='name'>
+
+          </input>
+        </div>
+      </form>
     </div>
   )
 }

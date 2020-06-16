@@ -17,4 +17,9 @@ describe('Register', () => {
     expect(wrapper.find('#alreadyregistered').text()).toContain('Already have an account?')
     expect(wrapper.find('#login').text()).toEqual('Log In')
   })
+
+  it('has a field for name', () => {
+    expect(wrapper.find('input#name').exists()).toEqual(true);
+  });
+
 });
