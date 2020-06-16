@@ -8,7 +8,7 @@ function Register() {
     email: "",
     password: "",
     password2: "",
-    errors: {}
+    errors: { name: ""}
   })
 
   const onChange = (e) => {
@@ -26,6 +26,8 @@ function Register() {
             id='name'
             value={formValues.name}
             onChange={onChange}
+            type="email"
+            errors={formValues.errors.name}
           >
 
           </input>
