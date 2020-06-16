@@ -14,19 +14,31 @@ describe('Register', () => {
   });
 
   it('renders an already have account log in link', () => {
-    expect(wrapper.find('#alreadyregistered').text()).toContain('Already have an account?')
-    expect(wrapper.find('#login').text()).toEqual('Log In')
-  })
+    expect(wrapper.find('#alreadyregistered').text()).toContain('Already have an account?');
+    expect(wrapper.find('#login').text()).toEqual('Log In');
+  });
 
   it('has a field for name', () => {
-    expect(wrapper.find('input#name').prop('value')).toEqual("")
-    expect(wrapper.find('input#name').prop('type')).toEqual("name")
-    expect(wrapper.find('input#name').prop('errors')).toEqual("")
+    expect(wrapper.find('input#name').prop('value')).toEqual("");
+    expect(wrapper.find('input#name').prop('type')).toEqual("name");
+    expect(wrapper.find('input#name').prop('errors')).toEqual("");
   });
   
   it('has a field for email', () => {
-    expect(wrapper.find('input#email').prop('value')).toEqual("")
-    expect(wrapper.find('input#email').prop('type')).toEqual("email")
-    expect(wrapper.find('input#email').prop('errors')).toEqual("")
-  })
+    expect(wrapper.find('input#email').prop('value')).toEqual("");
+    expect(wrapper.find('input#email').prop('type')).toEqual("email");
+    expect(wrapper.find('input#email').prop('errors')).toEqual("");
+  });
+
+  it('has a field for password', () => {
+    expect(wrapper.find('input#password').prop('value')).toEqual("");
+    expect(wrapper.find('input#password').prop('type')).toEqual("password");
+    expect(wrapper.find('input#password').prop('errors')).toEqual("");
+  });
+
+  it('has a field for password2', () => {
+    expect(wrapper.find('input#password2').prop('value')).toEqual("");
+    expect(wrapper.find('input#password2').prop('type')).toEqual("password2");
+    expect(wrapper.find('input#password2').prop('errors')).toEqual("");
+  });
 });

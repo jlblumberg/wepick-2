@@ -8,11 +8,11 @@ function Register() {
     email: "",
     password: "",
     password2: "",
-    errors: { name: "", email: ""}
+    errors: { name: "", email: "", password: "", password2: ""}
   })
 
   const onChange = (e) => {
-    setFormValues(...formValues, {[e.target.id]: e.target.value})
+    setFormValues({...formValues, [e.target.id]: e.target.value})
   }
 
   return(
@@ -38,7 +38,22 @@ function Register() {
           type="email"
           errors={formValues.errors.email}
         />
-
+        <label htmlFor="password">Password</label> 
+        <input 
+          id='password'
+          value={formValues.password}
+          onChange={onChange}
+          type="password"
+          errors={formValues.errors.password}
+        />
+        <label htmlFor="password2">Confirm Password</label> 
+        <input 
+          id='password2'
+          value={formValues.password2}
+          onChange={onChange}
+          type="password2"
+          errors={formValues.errors.password2}
+        />
         </div>
       </form>
     </div>
