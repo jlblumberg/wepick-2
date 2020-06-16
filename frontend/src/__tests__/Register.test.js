@@ -19,10 +19,14 @@ describe('Register', () => {
   })
 
   it('has a field for name', () => {
-    expect(wrapper.find('input#name').exists()).toEqual(true);
     expect(wrapper.find('input#name').prop('value')).toEqual("")
-    expect(wrapper.find('input#name').prop('type')).toEqual("email")
+    expect(wrapper.find('input#name').prop('type')).toEqual("name")
     expect(wrapper.find('input#name').prop('errors')).toEqual("")
   });
-
+  
+  it('has a field for email', () => {
+    expect(wrapper.find('input#email').prop('value')).toEqual("")
+    expect(wrapper.find('input#email').prop('type')).toEqual("email")
+    expect(wrapper.find('input#email').prop('errors')).toEqual("")
+  })
 });

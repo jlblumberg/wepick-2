@@ -8,7 +8,7 @@ function Register() {
     email: "",
     password: "",
     password2: "",
-    errors: { name: ""}
+    errors: { name: "", email: ""}
   })
 
   const onChange = (e) => {
@@ -22,15 +22,23 @@ function Register() {
       </BrowserRouter>
       <form>
         <div>
-          <input 
-            id='name'
-            value={formValues.name}
-            onChange={onChange}
-            type="email"
-            errors={formValues.errors.name}
-          >
+        <label htmlFor="name">Name</label>
+        <input 
+          id='name'
+          value={formValues.name}
+          onChange={onChange}
+          type="name"
+          errors={formValues.errors.name}
+        />
+        <label htmlFor="email">Email</label> 
+        <input 
+          id='email'
+          value={formValues.email}
+          onChange={onChange}
+          type="email"
+          errors={formValues.errors.email}
+        />
 
-          </input>
         </div>
       </form>
     </div>
