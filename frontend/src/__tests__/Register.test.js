@@ -42,7 +42,7 @@ describe('Register', () => {
     expect(wrapper.find('input#password2').prop('errors')).toEqual("");
   });
 
-  it('Fields can be updated', () => {
+  it('fields can be updated', () => {
     wrapper.find({ id: 'name' }).simulate('change', { target: { id: 'name', value: 'Mike'} });
     expect(wrapper.find({ id: 'name' }).prop('value')).toEqual('Mike');
     wrapper.find({ id: 'email' }).simulate('change', { target: { id: 'email', value: 'mike@example.com'} });
@@ -52,4 +52,9 @@ describe('Register', () => {
     wrapper.find({ id: 'password2' }).simulate('change', { target: { id: 'password2', value: 'examplepassword'} });
     expect(wrapper.find({ id: 'password2' }).prop('value')).toEqual('examplepassword');
   });
+
+  it('has a submit button', () => {
+    expect(wrapper.find('button#sign-up').text()).toEqual('Sign up');
+  });
+
 });

@@ -13,7 +13,6 @@ function Register() {
 
   const onChange = (e) => {
     setFormValues({...formValues, [e.target.id]: e.target.value})
-    console.log(formValues)
   }
 
   return(
@@ -56,6 +55,7 @@ function Register() {
           errors={formValues.errors.password2}
         />
         </div>
+        <button id="sign-up" type="submit">Sign up</button>
       </form>
     </div>
   )
