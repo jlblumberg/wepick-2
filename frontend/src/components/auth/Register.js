@@ -13,6 +13,7 @@ function Register() {
 
   const onChange = (e) => {
     setFormValues({...formValues, [e.target.id]: e.target.value})
+    console.log(formValues.name)
   }
 
   return(

@@ -41,4 +41,9 @@ describe('Register', () => {
     expect(wrapper.find('input#password2').prop('type')).toEqual("password2");
     expect(wrapper.find('input#password2').prop('errors')).toEqual("");
   });
+
+  it('stores field values in state', () => {
+    wrapper.find({ id: 'name' }).simulate('change', { target: { id: 'name', value: 'Mike'} });
+    expect(wrapper.find({ id: 'name' }).prop('value')).toEqual('Mike');
+  });
 });
