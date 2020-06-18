@@ -42,8 +42,14 @@ describe('Register', () => {
     expect(wrapper.find('input#password2').prop('errors')).toEqual("");
   });
 
-  it('stores field values in state', () => {
+  it('Fields can be updated', () => {
     wrapper.find({ id: 'name' }).simulate('change', { target: { id: 'name', value: 'Mike'} });
     expect(wrapper.find({ id: 'name' }).prop('value')).toEqual('Mike');
+    wrapper.find({ id: 'email' }).simulate('change', { target: { id: 'email', value: 'mike@example.com'} });
+    expect(wrapper.find({ id: 'email' }).prop('value')).toEqual('mike@example.com');
+    wrapper.find({ id: 'password' }).simulate('change', { target: { id: 'password', value: 'examplepassword'} });
+    expect(wrapper.find({ id: 'password' }).prop('value')).toEqual('examplepassword');
+    wrapper.find({ id: 'password2' }).simulate('change', { target: { id: 'password2', value: 'examplepassword'} });
+    expect(wrapper.find({ id: 'password2' }).prop('value')).toEqual('examplepassword');
   });
 });
