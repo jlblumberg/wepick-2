@@ -30,4 +30,14 @@ describe('Login', () => {
     expect(wrapper.find('input#password').prop('errors')).toEqual("");
   });
 
+  it('fields can be updated', () => {
+    wrapper.find({ id: 'email'}).simulate('change', { target: { id: 'email', value: 'mike@example.com'} });
+    expect(wrapper.find({ id: 'email'}).prop('value')).toEqual('mike@example.com')
+    wrapper.find({ id: 'password'}).simulate('change', { target: { id: 'password', value: 'examplepassword'} });
+    expect(wrapper.find({ id: 'password'}).prop('value')).toEqual('examplepassword')
+  })
+
+  it('has a submit button', () => {
+    expect(wrapper.find('button#log-in').text()).toEqual('Log in');
+  })
 });
