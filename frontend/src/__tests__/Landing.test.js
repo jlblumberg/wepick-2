@@ -16,9 +16,8 @@ describe('Landing', () => {
   it('renders a signup link', () => { 
     expect(wrapper.find('#signup').text()).toEqual('Sign Up')
   });
-
+  
   it('renders a login link', () => {
     expect(wrapper.find('#login').text()).toEqual('Log In')
   });
-  
 });

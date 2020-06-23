@@ -28,6 +28,14 @@ function Login() {
             type="email"
             errors={formValues.errors.email}
           />
+          <label htmlFor="password">Password</label>
+          <input
+            id='password'
+            value={formValues.password}
+            onChange={onChange}
+            type="password"
+            errors={formValues.errors.password}
+          />
         </div>
       </form>
     </div>

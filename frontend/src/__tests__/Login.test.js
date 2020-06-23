@@ -24,4 +24,10 @@ describe('Login', () => {
     expect(wrapper.find('input#email').prop('errors')).toEqual("");
   });
 
+  it('has a field for password', () => {
+    expect(wrapper.find('input#password').prop('value')).toEqual("");
+    expect(wrapper.find('input#password').prop('type')).toEqual("password");
+    expect(wrapper.find('input#password').prop('errors')).toEqual("");
+  });
+
 });
