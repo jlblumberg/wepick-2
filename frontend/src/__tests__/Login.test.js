@@ -12,4 +12,10 @@ describe('Login', () => {
   it('renders correctly', () => {
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should have a signup link if you don\'t already have an account', () => {
+    expect(wrapper.find('#notregistered').text()).toContain('Don\'t have an account?')
+  })
+
+
 });
