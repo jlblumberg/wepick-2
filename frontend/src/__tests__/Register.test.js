@@ -20,7 +20,7 @@ describe('Register', () => {
 
   it('has a field for name', () => {
     expect(wrapper.find('input#name').prop('value')).toEqual("");
-    expect(wrapper.find('input#name').prop('type')).toEqual("name");
+    expect(wrapper.find('input#name').prop('type')).toEqual("text");
     expect(wrapper.find('input#name').prop('errors')).toEqual("");
   });
   
@@ -38,7 +38,7 @@ describe('Register', () => {
 
   it('has a field for password2', () => {
     expect(wrapper.find('input#password2').prop('value')).toEqual("");
-    expect(wrapper.find('input#password2').prop('type')).toEqual("password2");
+    expect(wrapper.find('input#password2').prop('type')).toEqual("password");
     expect(wrapper.find('input#password2').prop('errors')).toEqual("");
   });
 

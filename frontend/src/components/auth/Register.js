@@ -27,7 +27,7 @@ function Register() {
           id='name'
           value={formValues.name}
           onChange={onChange}
-          type="name"
+          type="text"
           errors={formValues.errors.name}
         />
         <label htmlFor="email">Email</label> 
@@ -51,7 +51,7 @@ function Register() {
           id='password2'
           value={formValues.password2}
           onChange={onChange}
-          type="password2"
+          type="password"
           errors={formValues.errors.password2}
         />
         </div>
