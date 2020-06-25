@@ -18,6 +18,7 @@ function Login() {
       <BrowserRouter>
         <p id="notregistered">Don't have an account? <Link id="signup" to="/signup">Sign up</Link></p>
       </BrowserRouter>
+      <h1 id="login-title">Login</h1>
       <form>
         <div>
           <label htmlFor="email">Email</label>
