@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import { act } from 'react-dom/test-utils';
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import { render } from "react-dom";
 import { mount, shallow } from 'enzyme';
 import { MemoryRouter } from 'react-router-dom'
 import Landing from '../components/layout/Landing'
 import App from '../App'
 import Login from '../components/auth/Login'
-import NavBar from '../components/layout/NavBar'
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -25,16 +25,15 @@ test('Signup routing', () => {
   const root = document.createElement('div');
   document.body.appendChild(root);
 
-  const wrapper = shallow(
+  render (
     <MemoryRouter initialEntries={[ '/' ]}>
       <Landing />
     </MemoryRouter>,
     root
   );
-  // expect(wrapper.find(Login)).toHaveLength(1)
-  console.log(document.body.textContent);
   act(() => {
     const goToSignup = document.querySelector('#signup')
     goToSignup.dispatchEvent(new MouseEvent("click", { bubbles: "true" }))
-  })
-})
+  });
+  expect(document.querySelector('#name').textContent).toBe('Name')
+});
