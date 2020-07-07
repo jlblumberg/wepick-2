@@ -31,4 +31,16 @@ describe('Router', () => {
     fireEvent.click(getByText(/sign up/i))
     expect(container.innerHTML).toMatch('Name')
   })
+
+  test('allows linking from landing to login page', () => {
+    const history = createMemoryHistory()
+    const { container, getByText } = renderTest(
+      <Router history={history}>
+        <App />
+      </Router>
+    )
+    expect(container.innerHTML).toMatch('Log In')
+    fireEvent.click(getByText(/Log In/i))
+    expect(container.innerHTML).toMatch('Email')
+  })
 })
