@@ -15,9 +15,7 @@ function Login() {
 
   return (
     <div>
-      <BrowserRouter>
-        <p id="notregistered">Don't have an account? <Link id="signup" to="/signup">Sign up</Link></p>
-      </BrowserRouter>
+      <p id="notregistered">Don't have an account? <Link id="signup" to="/signup">Sign up</Link></p>
       <h1 id="login-title">Login</h1>
       <form>
         <div>

@@ -15,7 +15,7 @@ function Landing() {
         className="btn btn-large waves-effect waves-light hoverable blue accent-3"
       >
         Sign Up
-        </Link>
+      </Link>
       <Link
         id='login'
         to='/login'
@@ -27,7 +27,7 @@ function Landing() {
         className="btn btn-large waves-effect waves-light hoverable blue accent-3"
       >
         Log In
-        </Link>
+      </Link>
     </div>
   )
 }
